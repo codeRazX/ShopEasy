@@ -8,7 +8,7 @@ Web-based online store built with React. It allows users to browse products, add
 - Add and remove items from the cart
 - Automatic quantity updates
 - Shared state using `useOutletContext` across components
-- Responsive layout (final design in progress)
+- Responsive layout 
 - Behavior testing with Vitest + React Testing Library
 
 ## 🧪 Testing
