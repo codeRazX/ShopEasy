@@ -1,0 +1,47 @@
+@use 'variables' as v;
+@use 'mixin' as m;
+
+.home{
+  flex: 1;
+  position: relative;
+
+  &__picture{
+   position: absolute;
+   inset: 0;
+ 
+    img{
+      object-fit: cover;
+      height: 100%;
+      object-position: center left;
+    }
+
+
+    &::before{
+      content: "";
+      position: absolute;
+      background-color: rgb(0 0 0 /.3);
+      z-index: 999;
+      inset: 0;
+    }
+  }
+
+  &__content{
+    position: relative;
+    top: 10%;
+    left: 0;
+    z-index: 9999;
+
+    div{
+      @include m.flex(column, flex-start, center, 2rem);
+      max-width: 20rem;
+
+      a{
+        @include m.btn(100%);
+      }
+    }
+   
+    
+   
+  }
+  
+}

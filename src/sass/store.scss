@@ -1,0 +1,94 @@
+@use 'mixin' as m;
+@use 'variables' as v;
+
+.store{
+ 
+ 
+  &__products{
+
+    padding: 5rem 0;
+
+    h2{
+      margin: 4rem 0;
+    
+      text-align: center;
+    }
+
+    &__grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(calc(120rem / 3) - 10rem , 1fr));
+      gap: 5rem;
+     
+
+
+    .item{
+      @include m.flex(column, flex-start, stretch, 2rem);
+      box-shadow: 0 0 5px rgb(0 0 0 /.1);
+      padding: 1rem 1rem 5rem 1rem;
+      border-radius: 5px;
+      background-color: v.$backgroundItem;
+
+
+      img{
+        max-height: 45rem;
+        height: 100%;
+
+        @include m.tablet{
+          max-height: 35rem;
+        }
+      }
+
+      &__info{
+        @include m.flex(row, space-between, center, 2rem);
+      
+        &__rate{
+        
+          @include m.flex(row, flex-start, center, 1rem);
+        
+          svg{
+            width: 2.5rem;
+            height: 2,5rem;
+          }
+        }
+      }
+
+      &__quantity{
+        @include m.flex(row, space-between, center, 2rem);
+        
+        &__btn{
+          @include m.btn();
+        }
+
+        &__btn__delete{
+          @include m.btn(auto, v.$red,  #c9302c);
+          color: white;
+        }
+        &__block{
+          
+          @include m.flex(row, space-between, center, 1rem);
+
+          button{
+            border: none;
+            background-color: transparent;
+            font-size: 1.8rem;
+            cursor: pointer;
+          }
+
+          input{
+            max-width: 3rem;
+            text-align: center;
+            border: none;
+            height: 3rem;
+            border-radius: 5px;
+
+            &:focus{
+              outline: none;
+              border: 2px solid v.$colorPrimaryText;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}

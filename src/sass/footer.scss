@@ -1,0 +1,28 @@
+@use 'variables' as v;
+@use 'mixin' as m;
+
+.footer{
+  background-color: v.$colorPrimaryText;
+  padding: 2rem;
+  font-family: v.$fontHeaders;
+  margin-top: 5rem;
+  &__container{
+    color: white;
+    @include m.flex(row, space-between, center, 2rem);
+
+    div{
+      @include m.flex(row, flex-start, center, 5rem);
+
+      a{
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: inherit;
+
+        &:hover{
+          color: v.$colorSecondaryText;
+        }
+      }
+    }
+  }
+ 
+}

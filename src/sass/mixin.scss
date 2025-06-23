@@ -1,0 +1,33 @@
+@use 'variables' as v;
+
+@mixin btn($width: auto, $background: v.$colorPrimaryText, $backgroundHover: #444,  ){
+  background-color: $background;
+  padding: 1rem;
+  width: $width;
+  cursor: pointer;
+  color: v.$colorSecondary;
+  border-radius: 5px;
+  @if $width == 100% {
+    text-align: center;
+  }
+  border: none;
+
+  &:hover{
+    background-color: $backgroundHover;
+  }
+  
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin tablet(){
+  @media (min-width: v.$tablet){
+    @content;
+  }
+}

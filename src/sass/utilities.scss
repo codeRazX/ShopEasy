@@ -1,0 +1,83 @@
+@use 'variables' as v;
+@use 'mixin' as m;
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background-color: #999;
+  transform-origin: center;
+  animation: expandFromCenter 0.5s ease forwards;
+}
+
+
+@keyframes expandFromCenter {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden; 
+  clip: rect(0,0,0,0); 
+  border: 0;
+}
+
+.no-spinner {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+}
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.notification__cart{
+  position: absolute;
+  background-color: v.$red;
+  width: 2.5rem;
+  height: 2.5rem;
+  @include m.flex(row, center, center);
+  border-radius: 100%;
+  color: white;
+  top: -20%;
+  left: 50%;
+  font-size: 1.4rem;
+}
+
+
+@keyframes appear{
+  from{
+    opacity: 0;
+    transform: translate(-100%) scale(0.1);
+  }
+  to{
+    opacity: 1;
+    transform: translate(-100%) scale(1);
+  }
+}
+
+
+@keyframes appearMobile{
+   from{
+    opacity: 0;
+    transform: translate(-50%) scale(0.1);
+  }
+  to{
+    opacity: 1;
+    transform: translate(-50%) scale(1);
+  }
+}
